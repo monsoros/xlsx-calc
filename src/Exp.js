@@ -53,8 +53,6 @@ module.exports = function Exp(formula) {
         formula.cell.v = v;
         formula.cell.t = t;
         formula.cell.l = l;
-        console.log("formula", formula);
-        console.log("formula.cell", formula.cell);
       }
     } catch (e) {
       if (!applyCellError(formula.cell, e)) {
