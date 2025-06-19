@@ -49,7 +49,12 @@ module.exports = function Exp(formula) {
           }
         }
       } else if (typeof formula.cell.v === "object") {
-        formula.cell = formula.cell.v;
+        const { t, v, l } = formula.cell.v || {};
+        formula.cell.v = v;
+        formula.cell.t = t;
+        formula.cell.l = l;
+        console.log("formula", formula);
+        console.log("formula.cell", formula.cell);
       }
     } catch (e) {
       if (!applyCellError(formula.cell, e)) {
